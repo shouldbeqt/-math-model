@@ -1,0 +1,55 @@
+model:
+  mode: mvp
+paths:
+  tokogram_xlsx: data/скв_16427_токограмма_за_период_с_12_07_2026_по_12_07_2026.xlsx
+  reference_dynamogram_txt: data/12.07.2026 1137 скв 16427 динамограмма.txt
+  output_dir: output/
+kinematics:
+  S0_m: 3.5339
+motor:
+  P0_w: 3407.04
+  P_a_w_per_a: 425.348
+  P_b_w_per_a2: -31.7642
+  P_c_w_per_a3: 0.566
+  n_sync_rpm: 1500
+  s_nom: 0.03
+  eta_ed: 0.88
+  eta_per: 0.95
+  n_red: 33.29
+  n_kp: 3.0
+inverse:
+  method: torque_factor
+  k_tf: 0.3608
+  k_v: 0.3608
+  epsilon: 0.02
+  interpolate_dead_points: true
+parasitic:
+  mode: harmonic2
+  P0: 1150.88
+  P1: 4243.79
+  phi: -0.108
+  P2: -221.89
+  phi2: 0.6802
+tokogram:
+  dt_seconds: 0.2
+  i_phase_shift_samples: 1
+segmentation:
+  smoothing_window: 7
+  smoothing_polyorder: 2
+  spm_min: 3.0
+  spm_max: 12.0
+  prominence_fraction: 0.3
+  period_search_margin: 0.3
+  refine_by_xcorr: false
+  cycle_index: best
+units:
+  force_unit: kgf
+  length_unit: m
+validation:
+  align_by: phase
+  n_resample_points: 200
+pump_load:
+  mode: force_profile
+  F0_down_n: 25538.1
+  F1_down_n: 4769.7
+  F_up_n: 3576.7

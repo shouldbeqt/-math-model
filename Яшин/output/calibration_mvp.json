@@ -1,0 +1,41 @@
+{
+  "kinematics": {
+    "S0_m": 3.5339
+  },
+  "motor": {
+    "P0_w": 3407.04,
+    "P_a_w_per_a": 425.348,
+    "P_b_w_per_a2": -31.7642,
+    "P_c_w_per_a3": 0.566
+  },
+  "inverse": {
+    "method": "torque_factor",
+    "k_tf": 0.3608,
+    "k_v": 0.3608,
+    "interpolate_dead_points": true
+  },
+  "parasitic": {
+    "mode": "harmonic2",
+    "P0": 1150.88,
+    "P1": 4243.79,
+    "phi": -0.108,
+    "P2": -221.89,
+    "phi2": 0.6802
+  },
+  "pump_load": {
+    "mode": "force_profile",
+    "F0_down_n": 25538.1,
+    "F1_down_n": 4769.7,
+    "F_up_n": 3576.7
+  },
+  "tokogram": {
+    "i_phase_shift_samples": 1
+  },
+  "metrics": {
+    "rmse_f_up": 1139.4,
+    "rmse_f_dn": 1237.2,
+    "branch_ratio": 2.288,
+    "mape_f": 6.19,
+    "area_diff": 1.7
+  }
+}

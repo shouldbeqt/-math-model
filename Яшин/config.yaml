@@ -1,0 +1,105 @@
+# config.yaml — полная физическая модель (legacy, model.mode=full)
+# MVP-модель (6–8 параметров): config_well16427.yaml
+
+paths:
+  tokogram_xlsx: "data/скв_16427_токограмма_за_период_с_12_07_2026_по_12_07_2026.xlsx"
+  reference_dynamogram_txt: "data/12.07.2026 1137 скв 16427 динамограмма.txt"
+  output_dir: "output/"
+
+geometry:
+  l1: 1.7706
+  l2: 5.0
+  r: 0.710
+  R0: 2.8
+  l_pole: 2.6
+  L_pole: 1.5
+  ak: 2.963
+  bk: 1.6
+  S0_m: 3.5
+
+masses:
+  G: 700.98
+  Q_delta: 262.02
+  Q_R: 2247.04
+  R_crank_arm: 0.9
+  L_center_of_mass: 0.3
+
+motor:
+  P_nom_kw: 22
+  U_nom_v: 380
+  I_nom_a: 45
+  I_xx_a: 14.5
+  cos_phi_nom: 0.86
+  n_sync_rpm: 1500
+  s_nom: 0.03
+  lambda_max: 2.2
+  k_I_start: 6.0
+  eta_ed: 0.88
+  eta_per: 0.95
+  n_red: 33.29
+  n_kp: 3.0
+  P_xx_w: 3266.0
+  P_a_w_per_a: 382.1941
+  P_b_w_per_a2: -28.2299
+  P_c_w_per_a3: 0.5412
+  equivalent_circuit:
+    R1_ohm: null
+    R2_p_ohm: null
+    X1_ohm: null
+    X2_p_ohm: null
+    Xm_ohm: null
+
+current_to_torque:
+  method: "quadratic"
+
+tokogram:
+  dt_seconds: 0.2
+
+segmentation:
+  smoothing_window: 7
+  smoothing_polyorder: 2
+  spm_min: 3.0
+  spm_max: 12.0
+  prominence_fraction: 0.3
+  period_search_margin: 0.3
+  refine_by_xcorr: false
+  cycle_index: "best"
+
+units:
+  force_unit: "kgf"
+  length_unit: "m"
+
+validation:
+  align_by: "phase"
+  n_resample_points: 200
+
+kinematics:
+  method: "exact"
+
+inverse:
+  method: "torque_factor"
+  moment_source: "net_power"
+  v_zero_threshold_fraction: 0.01
+  tf_min: 1.0e-6
+  interpolate_dead_points: true
+
+wave_model: false
+rod_wave:
+  L: 1500.0
+  E: 2.1e11
+  rho: 7850.0
+  diameter: 0.022
+  nu: 0.5
+  n_nodes: 51
+  g: 9.80665
+  save_u: true
+elastic:
+  enabled: false
+  E: 2.1e11
+  rod_length: 1500.0
+  rod_diameter: 0.022
+friction:
+  mode: none
+  F_friction_n: 0.0
+dynamics:
+  m_eq: 0.0

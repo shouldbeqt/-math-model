@@ -1,0 +1,37 @@
+{
+  "rmse_f": 1472.8130102587065,
+  "mape_f": 5.0840421201707375,
+  "area_calc": 78479.7069436484,
+  "area_ref": 77505.69128364998,
+  "area_diff_percent": 1.2567021129245632,
+  "rmse_s": 0.2789994274270535,
+  "rmse_f_upstroke": 2632.5438713335293,
+  "rmse_f_downstroke": 2516.1859600068688,
+  "branch_ratio_calc": 2.0362631403490012,
+  "branch_ratio_ref": 2.287819680099943,
+  "method": "mvp",
+  "dt_seconds": 0.2,
+  "dt_source": "config",
+  "spm": 5.26,
+  "n_cycles": 8,
+  "n_full_cycles": 5,
+  "cycle_index": 6,
+  "I_xx_estimated": false,
+  "S0_m": 3.5339,
+  "S0_source": "config",
+  "S_range_m": [
+    6.582841087594937e-11,
+    3.5336106466971473
+  ],
+  "F_calc_range_N": [
+    11423.693446983947,
+    38778.2746547297
+  ],
+  "F_calc_plot_kgf": [
+    1164.8925419979246,
+    3954.283537673895
+  ],
+  "wave_model": true,
+  "rod_wave_c": 5172.194153034851,
+  "rod_wave_L": 67.0
+}

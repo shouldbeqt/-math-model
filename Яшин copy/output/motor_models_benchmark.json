@@ -1,0 +1,128 @@
+{
+  "config": "config.yaml",
+  "s0_m": 3.5,
+  "cycle_start": 27,
+  "cycle_length": 57,
+  "models": [
+    {
+      "method": "quadratic",
+      "kind": "regression",
+      "formula": "P=P_XX+aI+bI²+cI³",
+      "fitted_params": {},
+      "metrics": {
+        "rmse_f": 3335.386610860195,
+        "mape_f": 12.936132353581298,
+        "area_diff_percent": 87.67373311671355,
+        "s0_m": 3.5
+      }
+    },
+    {
+      "method": "ui",
+      "kind": "physical",
+      "formula": "P=U_eff·I",
+      "fitted_params": {
+        "U_eff_v": 171.3919617112136
+      },
+      "metrics": {
+        "rmse_f": 3928.6813727822932,
+        "mape_f": 15.616472572903204,
+        "area_diff_percent": 78.18573609241085,
+        "s0_m": 3.5
+      }
+    },
+    {
+      "method": "affine",
+      "kind": "regression",
+      "formula": "P=aI+b",
+      "fitted_params": {
+        "P_a_w_per_a": 149.60538173210855,
+        "P_bias_w": 500.0
+      },
+      "metrics": {
+        "rmse_f": 4059.459143679075,
+        "mape_f": 15.860142893237377,
+        "area_diff_percent": 79.56312424458137,
+        "s0_m": 3.5
+      }
+    },
+    {
+      "method": "ui_bias",
+      "kind": "physical",
+      "formula": "P=U_eff·I+P_bias",
+      "fitted_params": {
+        "U_eff_v": 149.58824541672797,
+        "P_bias_w": 500.7443354208332
+      },
+      "metrics": {
+        "rmse_f": 4059.719733244534,
+        "mape_f": 15.865260909737724,
+        "area_diff_percent": 79.5529676043473,
+        "s0_m": 3.5
+      }
+    },
+    {
+      "method": "poly2",
+      "kind": "regression",
+      "formula": "P=P_XX+aI+bI²",
+      "fitted_params": {
+        "P_a_w_per_a": 80.0,
+        "P_b_w_per_a2": -0.8401900217348143
+      },
+      "metrics": {
+        "rmse_f": 9061.963247882366,
+        "mape_f": 31.466437010587555,
+        "area_diff_percent": 63.831663181686494,
+        "s0_m": 3.5
+      }
+    },
+    {
+      "method": "linear",
+      "kind": "physical",
+      "formula": "M=k(I−I_XX), P=ωM/(η_ЭДη_пер)+P_XX",
+      "fitted_params": {},
+      "metrics": {
+        "rmse_f": 69093.227006379,
+        "mape_f": 251.02536483327037,
+        "area_diff_percent": 177.58759055628454,
+        "s0_m": 3.5
+      }
+    },
+    {
+      "method": "equivalent_circuit",
+      "kind": "physical",
+      "formula": "Г-схема: I(s), M_em(s), P_mech",
+      "fitted_params": {},
+      "metrics": {
+        "rmse_f": 133640.29139919305,
+        "mape_f": 496.1257314405077,
+        "area_diff_percent": 426.48176459350947,
+        "s0_m": 3.5
+      }
+    },
+    {
+      "method": "kloss_modified",
+      "kind": "physical",
+      "formula": "Kloss − M_loss, M_loss=P_const/ω_sync",
+      "fitted_params": {},
+      "metrics": {
+        "rmse_f": 176501.3301175335,
+        "mape_f": 656.9288180203409,
+        "area_diff_percent": 590.4246463893817,
+        "s0_m": 3.5
+      }
+    },
+    {
+      "method": "kloss",
+      "kind": "physical",
+      "formula": "Kloss M(s(I)), P=ωM/(η_ЭДη_пер)+P_XX",
+      "fitted_params": {},
+      "metrics": {
+        "rmse_f": 178096.61132697813,
+        "mape_f": 662.6427246331441,
+        "area_diff_percent": 596.0529495591373,
+        "s0_m": 3.5
+      }
+    }
+  ],
+  "best_method": "quadratic"
+}

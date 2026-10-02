@@ -1,0 +1,70 @@
+# config_demo.yaml — unit-тесты (полная модель model.mode=full)
+
+model:
+  mode: full
+
+paths:
+  tokogram_xlsx: "data/скв_16427_токограмма_за_период_с_12_07_2026_по_12_07_2026.xlsx"
+  reference_dynamogram_txt: "data/12.07.2026 1137 скв 16427 динамограмма.txt"
+  output_dir: "output/"
+
+geometry:
+  l1: 3.0
+  l2: 2.5
+  r: 1.2
+  R0: 2.8
+  l_pole: 2.6
+  L_pole: 1.5
+  ak: 1.6
+  bk: 1.6
+
+masses:
+  # кгс (формулы (2.30)–(2.31), dissertation Яшин_расчет.pdf)
+  G: 1500
+  Q_delta: 800
+  Q_R: 1200
+  R_crank_arm: 0.9
+  L_center_of_mass: 0.3
+
+motor:
+  P_nom_kw: 15
+  U_nom_v: 380
+  I_nom_a: 30
+  I_xx_a: 12
+  cos_phi_nom: 0.86
+  n_sync_rpm: 1500
+  s_nom: 0.03
+  lambda_max: 2.2
+  k_I_start: 6.0
+  eta_ed: 0.88
+  eta_per: 0.95
+  n_red: 37.0
+  n_kp: 3.0
+  P_xx_w: 800
+
+current_to_torque:
+  method: "kloss"
+
+tokogram:
+  dt_seconds: 0.2
+
+segmentation:
+  smoothing_window: 7
+  smoothing_polyorder: 2
+  spm_min: 3.0
+  spm_max: 12.0
+  prominence_fraction: 0.3
+  period_search_margin: 0.3
+  refine_by_xcorr: false
+  cycle_index: -1
+
+units:
+  force_unit: "kgf"
+  length_unit: "m"
+
+validation:
+  align_by: "phase"
+  n_resample_points: 200
+
+inverse:
+  v_zero_threshold_fraction: 0.01

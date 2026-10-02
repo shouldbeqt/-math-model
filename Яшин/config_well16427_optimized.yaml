@@ -1,0 +1,105 @@
+model:
+  mode: mvp
+paths:
+  tokogram_xlsx: data/скв_16427_токограмма_за_период_с_12_07_2026_по_12_07_2026.xlsx
+  reference_dynamogram_txt: data/12.07.2026 1137 скв 16427 динамограмма.txt
+  output_dir: output/
+kinematics:
+  mode: api_geometry
+  S0_m: 3.5339
+  api_geometry:
+    unit: C-640D-305-120
+    use_default: true
+motor:
+  P0_w: 8717.5
+  P_a_w_per_a: 92.0235
+  P_b_w_per_a2: 28.2788
+  P_c_w_per_a3: -0.8643
+  n_sync_rpm: 1500
+  s_nom: 0.03
+  eta_ed: 0.88
+  eta_per: 0.95
+  n_red: 33.29
+  n_kp: 3.0
+inverse:
+  method: torque_factor
+  k_tf: 1.3574
+  k_v: 1.3574
+  epsilon: 0.24396
+  interpolate_dead_points: true
+parasitic:
+  mode: harmonic2
+  P0: 3818.8009
+  P1: -1693.6042
+  phi: -0.8011
+  P2: 288.6955
+  phi2: 0.8409
+tokogram:
+  dt_seconds: 0.2
+  i_phase_shift_samples: 1
+segmentation:
+  smoothing_window: 7
+  smoothing_polyorder: 2
+  spm_min: 3.0
+  spm_max: 12.0
+  prominence_fraction: 0.3
+  period_search_margin: 0.3
+  refine_by_xcorr: false
+  cycle_index: best
+units:
+  force_unit: kgf
+  length_unit: m
+validation:
+  align_by: phase
+  n_resample_points: 200
+pump_load:
+  mode: force_profile
+  F0_down_n: 37759.7
+  F1_down_n: 4004.3
+  F_up_n: 357.2
+dynamics:
+  m_eq: 3205.0
+friction:
+  mode: none
+  F_friction_n: 0.0
+wave_model: true
+rod_wave:
+  L: 67.0
+  E: 203173467077.83755
+  rho: 7850.0
+  diameter: 0.022
+  nu: -0.8402
+  n_nodes: 51
+  g: 9.80665
+  save_u: true
+elastic:
+  enabled: false
+  E: 2.1e11
+  rod_length: 10000000.0
+  rod_diameter: 0.022
+_optimization:
+  source_config: config_well16427.yaml
+  loss: 0.378296
+  rmse_f_n: 12589.39
+  mape_f_percent: 40.177
+  area_diff_percent: 0.132
+  n_evals: 8742
+  de_success: false
+  param_names:
+  - motor.P0_w
+  - motor.P_a_w_per_a
+  - motor.P_b_w_per_a2
+  - motor.P_c_w_per_a3
+  - parasitic.P0
+  - parasitic.P1
+  - parasitic.phi
+  - parasitic.P2
+  - parasitic.phi2
+  - pump_load.F0_down_n
+  - pump_load.F1_down_n
+  - pump_load.F_up_n
+  - inverse.k_tf
+  - inverse.epsilon
+  - dynamics.m_eq
+  - rod_wave.nu
+  - rod_wave.E
